@@ -43,6 +43,13 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+
+    <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.1.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -62,7 +69,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.6.0</version>
         <configuration>
-          <mainClass>com.hillel.hw20.runner.Runner</mainClass>
+          <mainClass>com.hillel.hw21.runner.Runner</mainClass>
         </configuration>
       </plugin>
 
@@ -76,14 +83,14 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.2</version>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>7</source>
-          <target>7</target>
-        </configuration>
-      </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>7</source>
+                <target>7</target>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 </project>
