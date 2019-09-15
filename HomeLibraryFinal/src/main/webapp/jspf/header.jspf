@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${language}" />
+<fmt:setBundle basename="resources.text" />
+<!DOCTYPE html>
+<html lang="${language}">
+
+<ul>
+       <li> <a href="findActorsForFilm">Find Actors For Film</a></li>
+       <li> <a href="findActorsForNFilm">Find Actors For N Films</a></li>
+       <li> <a href="findFilmsForCurrentAndPreviousYear">Find Films For Current And Previous Year</a></li>
+       <li> <a href="findActorsAsDirector">Find Actors As Director</a></li>
+       <li> <a href="deleteFilmsOlderGivenYears">Delete Films Older Given Years</a></li>
+       <li> <a href="deleteFilms">Delete Film</a></li>
+
+      <c:when test="${not empty user}">
+       	   ${user.username} ${user.role}
+       	   <li><a href="/logout">Logout</a></li>
+      </c:when>
+
+      <c:otherwise>
+         	   <li><a href="login">Login</a></li>
+      <c/:otherwise>
+
+</ul>
+
+    <body>
+        <form>
+            <select id="language" name="language.text" onchange="submit()">
+                <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
+                <option value="ru" ${language == 'ru' ? 'selected' : ''}>Deutsch</option>
+            </select>
+            </form>
+    </body>
+</html>
+
